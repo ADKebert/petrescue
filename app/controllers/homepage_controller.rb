@@ -5,7 +5,8 @@ class HomepageController < ApplicationController
     pets = petfinder.shelter_pets('FL697')
     # It's working, you just need to get the stuff out of the pet object for it to render anything.
     # The method's I've found for a pet on the github are: :id, :name, :animal, :mix, :age, :shelter_id, :shelter_pet_id, :sex, :size, :description, :last_update, :status
-    render json: pets.map(&:inspect)
+    first_large_photo_per_pet = pets.map { |pet| pet.photos.first.large }
+    render json: first_large_photo_per_pet
   end
 end
 
