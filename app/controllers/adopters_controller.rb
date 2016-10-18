@@ -3,7 +3,7 @@ class AdoptersController < ApplicationController
 
   # GET /adopters
   def index
-    @adopters = Adopter.all
+    @adopters = Adopter.all.sort_by(:lname)
 
     render json: @adopters
   end
