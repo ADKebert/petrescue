@@ -3,7 +3,7 @@ class VolunteersController < ApplicationController
 
   # GET /volunteers
   def index
-    @volunteers = Volunteer.all.sort_by(:lname)
+    @volunteers = Volunteer.all.order("lower(lname)")
 
     render json: @volunteers
   end
