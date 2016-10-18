@@ -23,3 +23,16 @@ DELETE on /stories/1
   story with id = 1 is deleted
 
   get HTTP 204 No Content
+
+For Volunteers and Adopters it's basic REST:
+use /volunteers or /adopters.
+GET    on /volunteers for a list of volunteers
+POST   on /volunteers to create a new volunteer
+  params: fname, lname, phone, email, activity
+GET    on /volunteers/1 to show volunteer with id = 1
+PUT    on /volunteers/1 to update volunteer with id = 1
+  params: fname, lname, phone, email, activity
+DELETE on /volunteers/1 to delete volunteer with id = 1
+
+substitute /adopters for adopters methods
+adopters params: fname, lname, phone, email
