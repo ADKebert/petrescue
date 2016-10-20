@@ -10,6 +10,17 @@ class AdoptersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should sort the adopters" do
+    get adopters_url, as: :json
+
+    data = JSON.parse(response.body)
+
+    last_names = data.map { |adopter| adopter["lname"].downcase }
+
+    # Generic
+    assert_equal last_names.sort, last_names
+  end
+
   test "should create adopter" do
     assert_difference('Adopter.count') do
       post adopters_url, params: { adopter: { email: @adopter.email, fname: @adopter.fname, lname: @adopter.lname, phone: @adopter.phone } }, as: :json

@@ -1,13 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fname: MyString
-  lname: MyString
+  fname: Bob
+  lname: Smith
   phone: MyString
   email: MyString
 
 two:
-  fname: MyString
-  lname: MyString
+  fname: Jane
+  lname: Doe
+  phone: MyString
+  email: MyString
+
+# Make a specific adopter that has a lowercase last name to ensure sorting
+has_a_lower_case_last_name:
+  fname: Jane
+  lname: daniels
   phone: MyString
   email: MyString
