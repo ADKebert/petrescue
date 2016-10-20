@@ -19,6 +19,7 @@ class AdoptersControllerTest < ActionDispatch::IntegrationTest
 
     # Generic
     assert_equal last_names.sort, last_names
+
   end
 
   test "should create adopter" do
